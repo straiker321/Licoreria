@@ -14,7 +14,7 @@ public interface categoriasService {
 	 //funcion para mostrar los distritos habilitados
 	 List<categorias> findAllCustom();
 	 //funcion para buscar un distrito por codigo
-	 Optional<categorias> findById(Long id_categoria);
+	 Optional<categorias> findById(long id_categoria);
 	 //funcion para registrar
 	 categorias add(categorias c);
 	 //funcion para actualizar

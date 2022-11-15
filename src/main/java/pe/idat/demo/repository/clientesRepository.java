@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import pe.idat.demo.entity.clientes;
 
 
-public interface cliientesRepository extends JpaRepository<clientes, Long>{
+public interface clientesRepository extends JpaRepository<clientes, Long>{
     @Query("Select c from clientes c where c.estado='1'")
     List<clientes> findAllCustom();
 }
