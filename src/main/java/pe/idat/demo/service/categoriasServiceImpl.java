@@ -33,7 +33,7 @@ public class categoriasServiceImpl implements categoriasService{
     }
 
     @Override
-    public Optional<categorias> findById(Long id) {
+    public Optional<categorias> findById(Long id_categoria) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
