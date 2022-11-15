@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import pe.idat.demo.entity.categorias;
 
         
-public interface categoriaaRepository extends JpaRepository<categorias, Long>{
+public interface categoriasRepository extends JpaRepository<categorias, Long>{
     @Query("Select c from categoriaa c where c.estado='1'")
     List<categorias> findAllCustom();
 }
