@@ -42,10 +42,9 @@ public class ventasServicelmpl implements ventasService {
         return repositorio.save(objventas);
     }
 
-    @Override
+  @Override
     public ventas delete(ventas v) {
         ventas objventas=repositorio.getById(v.getCodigo());
-        objventas.setEstado(false);
         return repositorio.save(objventas);
     }
     

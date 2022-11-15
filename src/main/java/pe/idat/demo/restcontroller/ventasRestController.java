@@ -46,10 +46,9 @@ public class ventasRestController {
     }
     
     @DeleteMapping("/{id}")
-    public Categoria delete (@PathVariable long id) {
-        Categoria objcategoria = new Categoria();
-        objcategoria.setEstado(false);
-        return servicio.delete(Categoria.builder().codigo(id).build());
+    public ventas delete (@PathVariable long id) {
+        ventas objventas = new ventas();
+        return servicio.delete(ventas.builder().codigo(id).build());
     }
     
 }
