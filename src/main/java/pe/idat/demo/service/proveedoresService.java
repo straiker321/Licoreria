@@ -13,9 +13,9 @@ public interface proveedoresService {
 	 //funcion para buscar un distrito por codigo
 	 Optional<proveedores> findById(Long id_proveedores);
 	 //funcion para registrar
-	 proveedores add(proveedores c);
+	 proveedores add(proveedores p);
 	 //funcion para actualizar
-	 proveedores update(proveedores c);
+	 proveedores update(proveedores p);
 	 //funcion para eliminar
-	 proveedores delete(proveedores c);
+	 proveedores delete(proveedores p);
 }
