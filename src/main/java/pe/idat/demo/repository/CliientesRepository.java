@@ -8,6 +8,6 @@ package pe.idat.demo.repository;
  *
  * @author erick
  */
-public interface CliientesRepo {
+public interface CliientesRepository {
     
 }

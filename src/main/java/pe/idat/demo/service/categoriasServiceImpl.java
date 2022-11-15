@@ -10,7 +10,7 @@ package pe.idat.demo.service;
  */
 
 @Service
-public class categoriaaServiceImpl {
+public class categoriasServiceImpl {
     
     @Autowired
         private categoriaaRepository repositorio;

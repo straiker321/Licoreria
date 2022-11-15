@@ -26,9 +26,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity(name="categoriaa")
-@Table(name="categoriaa")
-public class categoriaa implements Serializable {
+@Entity(name="categorias")
+@Table(name="categorias")
+public class categorias implements Serializable {
     private static final long serialVersionUID=1L;
     @Id
     @Column(name="id_categoria")

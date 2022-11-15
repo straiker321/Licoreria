@@ -8,6 +8,6 @@ package pe.idat.demo.service;
  *
  * @author Harold Mallma
  */
-public interface categoriaaService {
+public interface categoriasService {
     
 }
