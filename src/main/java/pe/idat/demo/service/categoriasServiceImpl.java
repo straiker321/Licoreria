@@ -6,6 +6,7 @@ package pe.idat.demo.service;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.idat.demo.entity.categorias;
@@ -20,37 +21,38 @@ import pe.idat.demo.repository.categoriasRepository;
 public class categoriasServiceImpl implements categoriasService{
     
     @Autowired
-    private categoriasRepository repositorio;
-
+        private categoriasRepository repositorio;
+    
     @Override
     public List<categorias> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return repositorio.findAll();
     }
-
-    @Override
+    
+     @Override
     public List<categorias> findAllCustom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return repositorio.findAllCustom();
     }
 
     @Override
-    public Optional<categorias> findById(Long id_categoria) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Optional<categorias> findById(long id_categorias) {
+        return repositorio.findById(id_categorias);
     }
 
     @Override
     public categorias add(categorias c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         return repositorio.save(c);
     }
 
     @Override
     public categorias update(categorias c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        categorias objcategorias=repositorio.getById(c.getCodigo());
+        BeanUtils.copyProperties(c, objcategorias);
+        return repositorio.save(objcategorias);
     }
 
     @Override
     public categorias delete(categorias c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        categorias objcategorias=repositorio.getById(c.getCodigo());
+        return repositorio.save(objcategorias);
     }
-    
-
 }
