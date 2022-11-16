@@ -27,7 +27,7 @@ import pe.idat.demo.service.categoriasService;
 @RequestMapping("/categorias")
 public class categoriasRestController {
     
-    @Autowired
+   @Autowired
     private categoriasService servicio;
     
     @GetMapping
@@ -59,7 +59,9 @@ public class categoriasRestController {
     @DeleteMapping("/{id}")
     public categorias delete (@PathVariable long id) {
         categorias objcategorias = new categorias();
+        objcategorias.setEstado(false);
         return servicio.delete(categorias.builder().codigo(id).build());
     }
+    
 }
 

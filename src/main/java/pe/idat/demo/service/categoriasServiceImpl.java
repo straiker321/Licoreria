@@ -20,25 +20,23 @@ import pe.idat.demo.repository.categoriasRepository;
 @Service
 public class categoriasServiceImpl implements categoriasService{
     
-    @Autowired
-
-    private categoriasRepository repositorio;
-
-   @Override
+     @Autowired
+        private categoriasRepository repositorio;
+     
+     @Override
     public List<categorias> findAll() {
         return repositorio.findAll();
+        
     }
-    
+
     @Override
     public List<categorias> findAllCustom() {
         return repositorio.findAllCustom();
     }
 
-    
     @Override
-    public Optional<categorias> findById(long id_categorias) {
-        return repositorio.findById(id_categorias);
-
+    public Optional<categorias> findById(long id) {
+        return repositorio.findById(id);
     }
 
     @Override
@@ -56,6 +54,7 @@ public class categoriasServiceImpl implements categoriasService{
     @Override
     public categorias delete(categorias c) {
         categorias objcategorias=repositorio.getById(c.getCodigo());
+        objcategorias.setEstado(false);
         return repositorio.save(objcategorias);
     }
 }
