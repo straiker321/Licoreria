@@ -36,4 +36,6 @@ public class categorias implements Serializable {
     private long codigo;
     @Column(name="descripcion")
     private String descripcion;
+    @Column(name="estcat")
+    private boolean estado; 
 }
