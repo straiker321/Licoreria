@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import pe.idat.demo.entity.ventas;
 import pe.idat.demo.service.ventasService;
 
-
+@RestController
+@RequestMapping("/ventas")
 public class ventasRestController {
     
     @Autowired
@@ -41,14 +44,15 @@ public class ventasRestController {
     
     @PutMapping("/{id}")
     public ventas update (@PathVariable long id, @RequestBody ventas v) {
-        v.setCodigo(id);
+        v.setId_ventas(id);
         return servicio.update(v);
     }
     
     @DeleteMapping("/{id}")
     public ventas delete (@PathVariable long id) {
-        ventas objventas = new ventas();
-        return servicio.delete(ventas.builder().codigo(id).build());
+        ventas objventas  = new ventas();
+        return servicio.delete(ventas.builder().id_ventas(id).build());
+        
     }
     
 }
