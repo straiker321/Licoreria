@@ -15,53 +15,52 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import pe.idat.demo.entity.categorias;
-import pe.idat.demo.service.categoriasService;
+import pe.idat.demo.entity.productos;
+import pe.idat.demo.service.productosService;
 
 /**
  *
  * @author Harold Mallma
  */
 @RestController
-@RequestMapping("/categorias")
-public class categoriasRestController {
+@RequestMapping("/productos")
+public class productosRestController {
     
-   @Autowired
-    private categoriasService servicio;
+     @Autowired
+    private productosService servicio;
     
-    @GetMapping
-    public List<categorias> findAll() {
+     @GetMapping
+    public List<productos> findAll() {
         return servicio.findAll();
     }
     
     @GetMapping("/custom")
-    public List<categorias> findAllCustom() {
+    public List<productos> findAllCustom() {
         return servicio.findAllCustom();
     }
     
     @GetMapping("/{id}")
-    public Optional<categorias> findById(@PathVariable Long id) {
+    public Optional<productos> findById(@PathVariable Long id) {
         return servicio.findById(id);
     }
     
     @PostMapping
-    public categorias add (@RequestBody categorias c) {
-        return servicio.add(c);
+    public productos add (@RequestBody productos p) {
+        return servicio.add(p);
     }
     
     @PutMapping("/{id}")
-    public categorias update (@PathVariable long id, @RequestBody categorias c) {
-        c.setCodigo(id);
-        return servicio.update(c);
+    public productos update (@PathVariable long id, @RequestBody productos p) {
+        p.setCodigo(id);
+        return servicio.update(p);
     }
     
     @DeleteMapping("/{id}")
-    public categorias delete (@PathVariable long id) {
-        categorias objcategorias = new categorias();
-        objcategorias.setEstado(false);
-        return servicio.delete(categorias.builder().codigo(id).build());
+    public productos delete (@PathVariable long id) {
+        productos objproductos = new productos();
+        objproductos.setEstado(false);
+        return servicio.delete(productos.builder().codigo(id).build());
     }
     
+    
 }
-

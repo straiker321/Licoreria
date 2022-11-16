@@ -6,23 +6,23 @@ package pe.idat.demo.service;
 
 import java.util.List;
 import java.util.Optional;
-import pe.idat.demo.entity.categorias;
+import pe.idat.demo.entity.productos;
 
 /**
  *
  * @author Harold Mallma
  */
-public interface categoriasService {
-     public List<categorias> findAll();
+public interface productosService {
+    public List<productos> findAll();
     
-    public List<categorias> findAllCustom();
+    public List<productos> findAllCustom();
     
-    public Optional<categorias> findById(long id);
+    public Optional<productos> findById(long id);
     
-    public categorias add(categorias c);
+    public productos add(productos p);
     
-    public categorias update(categorias c);
+    public productos update(productos p);
     
-    public categorias delete(categorias c);
+    public productos delete(productos p);
     
 }
