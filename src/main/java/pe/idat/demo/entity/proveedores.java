@@ -34,4 +34,6 @@ public class proveedores implements Serializable {
     private String direccion;
     @Column(name = "telefono")
     private String telefono;
+    @Column(name = "estprov")
+    private boolean estado;
 }

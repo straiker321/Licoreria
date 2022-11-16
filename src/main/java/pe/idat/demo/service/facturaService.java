@@ -8,8 +8,8 @@ import pe.idat.demo.entity.factura;
 
 public interface facturaService {
     
-        public List<factura> findAll();
-    
+    public List<factura> findAll();
+        
     public List<factura> findAllCustom();
     
     public Optional<factura> findById(long id_factura);

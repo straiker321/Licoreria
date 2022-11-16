@@ -6,40 +6,50 @@ package pe.idat.demo.service;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.idat.demo.entity.proveedores;
+import pe.idat.demo.repository.proveedoresRepository;
 
 @Service
 public class proveedoresServiceImpl implements proveedoresService{
-
+    
+    @Autowired
+    private proveedoresRepository repositorio;
+    
     @Override
     public List<proveedores> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return repositorio.findAll();
     }
 
     @Override
     public List<proveedores> findAllCustom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return repositorio.findAllCustom();
     }
 
     @Override
     public Optional<proveedores> findById(Long id_proveedores) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return repositorio.findById(id_proveedores);
     }
 
     @Override
-    public proveedores add(proveedores c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public proveedores add(proveedores p) {
+         return repositorio.save(p);
     }
 
     @Override
-    public proveedores update(proveedores c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public proveedores update(proveedores p) {
+        proveedores objprov= repositorio.getById(p.getId_proveedores());
+        BeanUtils.copyProperties(p, objprov);
+        return repositorio.save(objprov);
     }
 
     @Override
-    public proveedores delete(proveedores c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public proveedores delete(proveedores p) {
+        proveedores objprov= repositorio.getById(p.getId_proveedores());
+        objprov.setEstado(false);
+        return repositorio.save(objprov);
     }
     
 }

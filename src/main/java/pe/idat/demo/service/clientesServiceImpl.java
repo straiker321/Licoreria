@@ -6,40 +6,50 @@ package pe.idat.demo.service;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.idat.demo.entity.clientes;
+import pe.idat.demo.repository.clientesRepository;
 
 @Service
 public class clientesServiceImpl implements clientesService{
 
+    @Autowired
+    private clientesRepository repositorio;
+    
     @Override
     public List<clientes> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+          return repositorio.findAll();
     }
 
     @Override
     public List<clientes> findAllCustom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return repositorio.findAllCustom();
     }
 
     @Override
     public Optional<clientes> findById(Long id_cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         return repositorio.findById(id_cliente);
     }
 
     @Override
     public clientes add(clientes c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return repositorio.save(c);
     }
 
     @Override
     public clientes update(clientes c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        clientes objcli= repositorio.getById(c.getId_cliente());
+        BeanUtils.copyProperties(c, objcli);
+        return repositorio.save(objcli);
     }
 
     @Override
     public clientes delete(clientes c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        clientes objcli= repositorio.getById(c.getId_cliente());
+        objcli.setEstado(false);
+        return repositorio.save(objcli);
     }
     
 }
