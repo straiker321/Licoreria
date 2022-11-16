@@ -20,9 +20,9 @@ import pe.idat.demo.repository.almacenRepository;
 public class almacenServiceImpl implements almacenService {
     
     @Autowired
-        private almacenRepository repositorio;
+    private almacenRepository repositorio;
      
-     @Override
+    @Override
     public List<almacen> findAll() {
         return repositorio.findAll();
         
