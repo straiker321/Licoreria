@@ -36,5 +36,6 @@ public class clientes implements Serializable{
     private String telefono;
     @Column(name = "dni")
     private String dni;
-    
+    @Column(name = "estcli")
+    private boolean estado;
 }
