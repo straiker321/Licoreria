@@ -32,6 +32,9 @@ public class factura implements Serializable{
     @Column(name = "fecha")
     private Date fecha;
     
+    @Column(name = "estfec")
+    private boolean estado;
+    
     @ManyToOne
     @JoinColumn(name="id_cliente", nullable =false)
     private clientes clientes;

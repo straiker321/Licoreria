@@ -50,9 +50,9 @@ public class ventasRestController {
     
     @DeleteMapping("/{id}")
     public ventas delete (@PathVariable long id) {
-        ventas objventas  = new ventas();
+        ventas objventas = new ventas();
+        objventas.setEstado(false);
         return servicio.delete(ventas.builder().id_ventas(id).build());
-        
     }
     
 }

@@ -11,7 +11,7 @@ public interface ventasService {
     
     public List<ventas> findAllCustom();
     
-    public Optional<ventas> findById(long id_ventas);
+    public Optional<ventas> findById(long id);
     
     public ventas add(ventas v);
     

@@ -35,16 +35,17 @@ public class ventasServicelmpl implements ventasService {
          return repositorio.save(v);
     }
 
-    @Override
+   @Override
     public ventas update(ventas v) {
         ventas objventas=repositorio.getById(v.getId_ventas());
         BeanUtils.copyProperties(v, objventas);
         return repositorio.save(objventas);
     }
 
-  @Override
+    @Override
     public ventas delete(ventas v) {
         ventas objventas=repositorio.getById(v.getId_ventas());
+        objventas.setEstado(false);
         return repositorio.save(objventas);
     }
     

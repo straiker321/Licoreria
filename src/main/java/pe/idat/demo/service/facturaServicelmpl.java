@@ -35,16 +35,17 @@ public class facturaServicelmpl implements facturaService {
          return repositorio.save(f);
     }
 
-    @Override
+   @Override
     public factura update(factura f) {
         factura objfactura=repositorio.getById(f.getId_factura());
         BeanUtils.copyProperties(f, objfactura);
         return repositorio.save(objfactura);
     }
 
-  @Override
+    @Override
     public factura delete(factura f) {
         factura objfactura=repositorio.getById(f.getId_factura());
+        objfactura.setEstado(false);
         return repositorio.save(objfactura);
     }
     
