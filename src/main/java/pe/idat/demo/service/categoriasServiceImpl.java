@@ -20,10 +20,10 @@ import pe.idat.demo.repository.categoriasRepository;
 @Service
 public class categoriasServiceImpl implements categoriasService{
     
-     @Autowired
+    @Autowired
         private categoriasRepository repositorio;
      
-    @Override
+     @Override
     public List<categorias> findAll() {
         return repositorio.findAll();
         
