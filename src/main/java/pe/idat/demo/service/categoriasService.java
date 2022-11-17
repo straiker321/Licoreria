@@ -17,7 +17,7 @@ public interface categoriasService {
     
     public List<categorias> findAllCustom();
     
-    public Optional<categorias> findById(long id);
+    public Optional<categorias> findById(long id_categoria);
     
     public categorias add(categorias c);
     

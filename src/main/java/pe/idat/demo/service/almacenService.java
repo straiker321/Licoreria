@@ -17,7 +17,7 @@ public interface almacenService {
     
     public List<almacen> findAllCustom();
     
-    public Optional<almacen> findById(long id);
+    public Optional<almacen> findById(long id_almacen);
     
     public almacen add(almacen a);
     

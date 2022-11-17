@@ -31,7 +31,7 @@ import lombok.NoArgsConstructor;
 public class categorias implements Serializable {
     private static final long serialVersionUID=1L;
     @Id
-    @Column(name="id_categoria")
+    @Column(name = "id_categoria")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long codigo;
     @Column(name="descripcion")

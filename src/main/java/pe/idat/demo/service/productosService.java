@@ -17,7 +17,7 @@ public interface productosService {
     
     public List<productos> findAllCustom();
     
-    public Optional<productos> findById(long id);
+    public Optional<productos> findById(long id_producto);
     
     public productos add(productos p);
     

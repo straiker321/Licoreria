@@ -11,7 +11,7 @@ public interface clientesService {
 	 //funcion para mostrar los distritos habilitados
 	 List<clientes> findAllCustom();
 	 //funcion para buscar un distrito por codigo
-	 Optional<clientes> findById(Long id_cliente);
+	 Optional<clientes> findById(Long id);
 	 //funcion para registrar
 	 clientes add(clientes c);
 	 //funcion para actualizar

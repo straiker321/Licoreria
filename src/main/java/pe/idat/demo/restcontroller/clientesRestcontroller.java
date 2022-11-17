@@ -30,8 +30,8 @@ public class clientesRestcontroller {
     }
     
     @GetMapping("/{id}")
-    public Optional<clientes> findById(@PathVariable Long id_cliente){
-        return service.findById(id_cliente);
+    public Optional<clientes> findById(@PathVariable Long id){
+        return service.findById(id);
     }
     
     @GetMapping("/custom") 
@@ -45,15 +45,15 @@ public class clientesRestcontroller {
     }
     
     @PutMapping("/{id}")
-    public clientes update(@PathVariable long id_cliente, @RequestBody clientes c) {
-    	c.setId_cliente(id_cliente);
+    public clientes update(@PathVariable long id, @RequestBody clientes c) {
+    	c.setCodigo(id);
     	return service.update(c);
     }
     @DeleteMapping("/{id}")
-    public clientes delete(@PathVariable long id_cliente) {
+    public clientes delete(@PathVariable long id) {
     	clientes objcli = new clientes();
     	objcli.setEstado(false);
-        return service.delete(clientes.builder().id_cliente(id_cliente).build());
+        return service.delete(clientes.builder().codigo(id).build());
     	
     }
 }

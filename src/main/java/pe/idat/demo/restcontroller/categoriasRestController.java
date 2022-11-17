@@ -41,8 +41,8 @@ public class categoriasRestController {
     }
     
     @GetMapping("/{id}")
-    public Optional<categorias> findById(@PathVariable Long id) {
-        return servicio.findById(id);
+    public Optional<categorias> findById(@PathVariable Long id_categoria) {
+        return servicio.findById(id_categoria);
     }
     
     @PostMapping
@@ -57,10 +57,10 @@ public class categoriasRestController {
     }
     
     @DeleteMapping("/{id}")
-    public categorias delete (@PathVariable long id) {
+    public categorias delete (@PathVariable long id_categoria) {
         categorias objcategorias = new categorias();
         objcategorias.setEstado(false);
-        return servicio.delete(categorias.builder().codigo(id).build());
+        return servicio.delete(categorias.builder().codigo(id_categoria).build());
     }
     
 }

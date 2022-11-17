@@ -29,8 +29,8 @@ public class clientesServiceImpl implements clientesService{
     }
 
     @Override
-    public Optional<clientes> findById(Long id_cliente) {
-         return repositorio.findById(id_cliente);
+    public Optional<clientes> findById(Long id) {
+         return repositorio.findById(id);
     }
 
     @Override
@@ -40,14 +40,14 @@ public class clientesServiceImpl implements clientesService{
 
     @Override
     public clientes update(clientes c) {
-        clientes objcli= repositorio.getById(c.getId_cliente());
+        clientes objcli= repositorio.getById(c.getCodigo());
         BeanUtils.copyProperties(c, objcli);
         return repositorio.save(objcli);
     }
 
     @Override
     public clientes delete(clientes c) {
-        clientes objcli= repositorio.getById(c.getId_cliente());
+        clientes objcli= repositorio.getById(c.getCodigo());
         objcli.setEstado(false);
         return repositorio.save(objcli);
     }

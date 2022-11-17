@@ -12,7 +12,7 @@ public interface facturaService {
         
     public List<factura> findAllCustom();
     
-    public Optional<factura> findById(long id);
+    public Optional<factura> findById(long id_factura);
     
     public factura add(factura f);
     

@@ -5,10 +5,11 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import pe.idat.demo.entity.factura;
 import pe.idat.demo.repository.FacturaRepository;
 
-
+@Service
 public class facturaServicelmpl implements facturaService {
     
      @Autowired
@@ -26,8 +27,8 @@ public class facturaServicelmpl implements facturaService {
     }
 
     @Override
-    public Optional<factura> findById(long id) {
-        return repositorio.findById(id);
+    public Optional<factura> findById(long id_factura) {
+        return repositorio.findById(id_factura);
     }
 
     @Override

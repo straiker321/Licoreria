@@ -34,8 +34,8 @@ public class almacenServiceImpl implements almacenService {
     }
 
     @Override
-    public Optional<almacen> findById(long id) {
-        return repositorio.findById(id);
+    public Optional<almacen> findById(long id_almacen) {
+        return repositorio.findById(id_almacen);
     }
 
     @Override

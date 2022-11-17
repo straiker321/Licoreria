@@ -35,8 +35,8 @@ public class categoriasServiceImpl implements categoriasService{
     }
 
     @Override
-    public Optional<categorias> findById(long id) {
-        return repositorio.findById(id);
+    public Optional<categorias> findById(long id_categoria) {
+        return repositorio.findById(id_categoria);
     }
 
     @Override

@@ -50,16 +50,16 @@ public class almacenRestController {
     }
     
    @PutMapping("/{id}")
-    public almacen update (@PathVariable long id, @RequestBody almacen a) {
-        a.setCodigo(id);
+    public almacen update (@PathVariable long id_almacen, @RequestBody almacen a) {
+        a.setCodigo(id_almacen);
         return servicio.update(a);
     }
     
     @DeleteMapping("/{id}")
-    public almacen delete (@PathVariable long id) {
+    public almacen delete (@PathVariable long id_almacen) {
         almacen objalmacen = new almacen();
         objalmacen.setEstado(false);
-        return servicio.delete(almacen.builder().codigo(id).build());
+        return servicio.delete(almacen.builder().codigo(id_almacen).build());
     }
     
     
