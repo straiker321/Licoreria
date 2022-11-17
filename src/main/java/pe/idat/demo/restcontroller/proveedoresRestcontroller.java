@@ -30,8 +30,8 @@ public class proveedoresRestcontroller {
     }
     
     @GetMapping("/{id}")
-    public Optional<proveedores> findById(@PathVariable Long id_proveedores){
-        return service.findById(id_proveedores);
+    public Optional<proveedores> findById(@PathVariable Long id){
+        return service.findById(id);
     }
     
     @GetMapping("/custom") 
@@ -45,14 +45,14 @@ public class proveedoresRestcontroller {
     }
     
     @PutMapping("/{id}")
-    public proveedores update(@PathVariable long id_proveedores, @RequestBody proveedores p) {
-    	p.setId_proveedores(id_proveedores);
+    public proveedores update(@PathVariable long id, @RequestBody proveedores p) {
+    	p.setId_proveedores(id);
     	return service.update(p);
     }
     @DeleteMapping("/{id}")
-    public proveedores delete(@PathVariable long id_proveedores) {
+    public proveedores delete(@PathVariable long id) {
     	proveedores objprov = new proveedores();
     	objprov.setEstado(false);
-        return service.delete(proveedores.builder().id_proveedores(id_proveedores).build());    	
+        return service.delete(proveedores.builder().id_proveedores(id).build());    	
     }
 }

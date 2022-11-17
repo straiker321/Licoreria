@@ -32,11 +32,13 @@ public class almacenServiceImpl implements almacenService {
     public List<almacen> findAllCustom() {
         return repositorio.findAllCustom();
     }
-
+    
     @Override
-    public Optional<almacen> findById(long id_almacen) {
-        return repositorio.findById(id_almacen);
+    public Optional<almacen> findById(Long id) {
+        return repositorio.findById(id);
     }
+    
+    
 
     @Override
     public almacen add(almacen a) {
@@ -56,6 +58,8 @@ public class almacenServiceImpl implements almacenService {
         objcalmacen.setEstado(false);
         return repositorio.save(objcalmacen);
     }
+
+   
     
     
 }

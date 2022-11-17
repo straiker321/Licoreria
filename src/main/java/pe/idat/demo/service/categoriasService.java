@@ -13,16 +13,17 @@ import pe.idat.demo.entity.categorias;
  * @author Harold Mallma
  */
 public interface categoriasService {
-     public List<categorias> findAll();
-    
-    public List<categorias> findAllCustom();
-    
-    public Optional<categorias> findById(long id_categoria);
-    
-    public categorias add(categorias c);
-    
-    public categorias update(categorias c);
-    
-    public categorias delete(categorias c);
+ //funcion para mostrar todos los distritos
+	 List<categorias> findAll();
+	 //funcion para mostrar los distritos habilitados
+	 List<categorias> findAllCustom();
+	 //funcion para buscar un distrito por codigo
+	 Optional<categorias> findById(Long id);
+	 //funcion para registrar
+	 categorias add(categorias c);
+	 //funcion para actualizar
+	 categorias update(categorias c);
+	 //funcion para eliminar
+	 categorias delete(categorias c);
     
 }

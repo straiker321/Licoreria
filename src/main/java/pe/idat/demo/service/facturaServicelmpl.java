@@ -27,8 +27,8 @@ public class facturaServicelmpl implements facturaService {
     }
 
     @Override
-    public Optional<factura> findById(long id_factura) {
-        return repositorio.findById(id_factura);
+    public Optional<factura> findById(Long id) {
+       return repositorio.findById(id);
     }
 
     @Override
@@ -49,5 +49,7 @@ public class facturaServicelmpl implements facturaService {
         objfactura.setEstado(false);
         return repositorio.save(objfactura);
     }
+
+    
     
 }

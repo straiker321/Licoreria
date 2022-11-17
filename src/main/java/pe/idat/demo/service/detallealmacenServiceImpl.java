@@ -34,10 +34,10 @@ public class detallealmacenServiceImpl  implements detallealmacenService{
     }
     
     @Override
-    public Optional<detallealmacen> findById(long id) {
+    public Optional<detallealmacen> findById(Long id) {
        return repositorio.findById(id);
     }
-    
+        
     @Override
     public detallealmacen add(detallealmacen da) {
         return repositorio.save(da);
@@ -56,6 +56,8 @@ public class detallealmacenServiceImpl  implements detallealmacenService{
         objdetallealmacen.setEstado(false);
         return repositorio.save(objdetallealmacen);
     }
+
+ 
 
     
     

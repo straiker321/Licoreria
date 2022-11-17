@@ -40,8 +40,8 @@ public class almacenRestController {
     }
     
     @GetMapping("/{id}")
-    public Optional<almacen> findById(@PathVariable Long id_almacen) {
-        return servicio.findById(id_almacen);
+    public Optional<almacen> findById(@PathVariable Long id) {
+        return servicio.findById(id);
     }
     
     @PostMapping
@@ -50,16 +50,16 @@ public class almacenRestController {
     }
     
    @PutMapping("/{id}")
-    public almacen update (@PathVariable long id_almacen, @RequestBody almacen a) {
-        a.setCodigo(id_almacen);
+    public almacen update (@PathVariable long id, @RequestBody almacen a) {
+        a.setCodigo(id);
         return servicio.update(a);
     }
     
     @DeleteMapping("/{id}")
-    public almacen delete (@PathVariable long id_almacen) {
+    public almacen delete (@PathVariable long id) {
         almacen objalmacen = new almacen();
         objalmacen.setEstado(false);
-        return servicio.delete(almacen.builder().codigo(id_almacen).build());
+        return servicio.delete(almacen.builder().codigo(id).build());
     }
     
     

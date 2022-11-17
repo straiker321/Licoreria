@@ -11,7 +11,7 @@ public interface proveedoresService {
 	 //funcion para mostrar los distritos habilitados
 	 List<proveedores> findAllCustom();
 	 //funcion para buscar un distrito por codigo
-	 Optional<proveedores> findById(Long id_proveedores);
+	 Optional<proveedores> findById(Long id);
 	 //funcion para registrar
 	 proveedores add(proveedores p);
 	 //funcion para actualizar

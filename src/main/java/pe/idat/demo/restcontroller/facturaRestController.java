@@ -33,8 +33,8 @@ public class facturaRestController {
     }
     
     @GetMapping("/{id}")
-    public Optional<factura> findById(@PathVariable Long id_factura) {
-        return servicio.findById(id_factura);
+    public Optional<factura> findById(@PathVariable Long id) {
+        return servicio.findById(id);
     }
     
     @PostMapping
@@ -43,16 +43,16 @@ public class facturaRestController {
     }
     
     @PutMapping("/{id}")
-    public factura update (@PathVariable long id_factura, @RequestBody factura f) {
-        f.setId_factura(id_factura);
+    public factura update (@PathVariable long id, @RequestBody factura f) {
+        f.setId_factura(id);
         return servicio.update(f);
     }
     
     @DeleteMapping("/{id}")
-    public factura delete (@PathVariable long id_factura) {
+    public factura delete (@PathVariable long id) {
         factura objfactura = new factura();
         objfactura.setEstado(false);
-        return servicio.delete(factura.builder().id_factura(id_factura).build());
+        return servicio.delete(factura.builder().id_factura(id).build());
     }
     
 }

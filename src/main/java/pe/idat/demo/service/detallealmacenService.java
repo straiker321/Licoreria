@@ -13,15 +13,16 @@ import pe.idat.demo.entity.detallealmacen;
  * @author erick
  */
 public interface detallealmacenService {
-    public List<detallealmacen> findAll();
-    
-    public List<detallealmacen> findAllCustom();
-    
-    public Optional<detallealmacen> findById(long id);
-    
-    public detallealmacen add(detallealmacen da);
-    
-    public detallealmacen update(detallealmacen da);
-    
-    public detallealmacen delete(detallealmacen da);
+//funcion para mostrar todos los distritos
+	 List<detallealmacen> findAll();
+	 //funcion para mostrar los distritos habilitados
+	 List<detallealmacen> findAllCustom();
+	 //funcion para buscar un distrito por codigo
+	 Optional<detallealmacen> findById(Long id);
+	 //funcion para registrar
+	 detallealmacen add(detallealmacen da);
+	 //funcion para actualizar
+	 detallealmacen update(detallealmacen da);
+	 //funcion para eliminar
+	 detallealmacen delete(detallealmacen da);
 }

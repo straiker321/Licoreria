@@ -23,11 +23,10 @@ import lombok.NoArgsConstructor;
 @Table(name = "ventas")
 public class ventas  implements Serializable{
     private static final long serialVersionUID=1L;
-    
     @Id
     @Column(name = "id_ventas")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_ventas;
+    private long codigo;
     
     @ManyToOne
     @JoinColumn(name="id_factura", nullable =false)

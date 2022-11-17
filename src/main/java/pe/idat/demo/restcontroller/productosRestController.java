@@ -40,8 +40,8 @@ public class productosRestController {
     }
     
     @GetMapping("/{id}")
-    public Optional<productos> findById(@PathVariable Long id_producto) {
-        return servicio.findById(id_producto);
+    public Optional<productos> findById(@PathVariable Long id) {
+        return servicio.findById(id);
     }
     
     @PostMapping
@@ -50,16 +50,16 @@ public class productosRestController {
     }
     
     @PutMapping("/{id}")
-    public productos update (@PathVariable long id_producto, @RequestBody productos p) {
-        p.setCodigo(id_producto);
+    public productos update (@PathVariable long id, @RequestBody productos p) {
+        p.setCodigo(id);
         return servicio.update(p);
     }
     
     @DeleteMapping("/{id}")
-    public productos delete (@PathVariable long id_producto) {
+    public productos delete (@PathVariable long id) {
         productos objproductos = new productos();
         objproductos.setEstado(false);
-        return servicio.delete(productos.builder().codigo(id_producto).build());
+        return servicio.delete(productos.builder().codigo(id).build());
     }
     
     

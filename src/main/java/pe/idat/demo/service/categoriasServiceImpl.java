@@ -34,9 +34,9 @@ public class categoriasServiceImpl implements categoriasService{
         return repositorio.findAllCustom();
     }
 
-    @Override
-    public Optional<categorias> findById(long id_categoria) {
-        return repositorio.findById(id_categoria);
+     @Override
+    public Optional<categorias> findById(Long id) {
+        return repositorio.findById(id);
     }
 
     @Override
@@ -57,4 +57,6 @@ public class categoriasServiceImpl implements categoriasService{
         objcategorias.setEstado(false);
         return repositorio.save(objcategorias);
     }
+
+   
 }

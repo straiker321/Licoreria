@@ -25,10 +25,10 @@ public class ventasServicelmpl implements ventasService {
     public List<ventas> findAllCustom() {
         return repositorio.findAllCustom();
     }
-
+    
     @Override
-    public Optional<ventas> findById(long id_ventas) {
-        return repositorio.findById(id_ventas);
+    public Optional<ventas> findById(Long id) {
+         return repositorio.findById(id);
     }
 
     @Override
@@ -38,16 +38,17 @@ public class ventasServicelmpl implements ventasService {
 
    @Override
     public ventas update(ventas v) {
-        ventas objventas=repositorio.getById(v.getId_ventas());
+        ventas objventas=repositorio.getById(v.getCodigo());
         BeanUtils.copyProperties(v, objventas);
         return repositorio.save(objventas);
     }
 
     @Override
     public ventas delete(ventas v) {
-        ventas objventas=repositorio.getById(v.getId_ventas());
+        ventas objventas=repositorio.getById(v.getCodigo());
         objventas.setEstado(false);
         return repositorio.save(objventas);
     }
-    
+
+
 }

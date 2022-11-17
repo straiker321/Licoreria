@@ -34,8 +34,8 @@ public class productosServiceImpl implements productosService  {
     }
 
     @Override
-    public Optional<productos> findById(long id_producto) {
-        return repositorio.findById(id_producto);
+    public Optional<productos> findById(Long id) {
+        return repositorio.findById(id);
     }
 
     @Override
@@ -56,5 +56,7 @@ public class productosServiceImpl implements productosService  {
         objproductos.setEstado(false);
         return repositorio.save(objproductos);
     }
+
+    
     
 }

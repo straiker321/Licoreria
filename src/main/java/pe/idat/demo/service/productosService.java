@@ -13,16 +13,17 @@ import pe.idat.demo.entity.productos;
  * @author Harold Mallma
  */
 public interface productosService {
-    public List<productos> findAll();
-    
-    public List<productos> findAllCustom();
-    
-    public Optional<productos> findById(long id_producto);
-    
-    public productos add(productos p);
-    
-    public productos update(productos p);
-    
-    public productos delete(productos p);
+    //funcion para mostrar todos los distritos
+	 List<productos> findAll();
+	 //funcion para mostrar los distritos habilitados
+	 List<productos> findAllCustom();
+	 //funcion para buscar un distrito por codigo
+	 Optional<productos> findById(Long id);
+	 //funcion para registrar
+	 productos add(productos p);
+	 //funcion para actualizar
+	 productos update(productos p);
+	 //funcion para eliminar
+	 productos delete(productos p);
     
 }

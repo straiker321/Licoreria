@@ -29,8 +29,8 @@ public class proveedoresServiceImpl implements proveedoresService{
     }
 
     @Override
-    public Optional<proveedores> findById(Long id_proveedores) {
-        return repositorio.findById(id_proveedores);
+    public Optional<proveedores> findById(Long id) {
+        return repositorio.findById(id);
     }
 
     @Override

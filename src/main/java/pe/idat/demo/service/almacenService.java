@@ -13,16 +13,16 @@ import pe.idat.demo.entity.almacen;
  * @author Harold Mallma
  */
 public interface almacenService {
-    public List<almacen> findAll();
-    
-    public List<almacen> findAllCustom();
-    
-    public Optional<almacen> findById(long id_almacen);
-    
-    public almacen add(almacen a);
-    
-    public almacen update(almacen a);
-    
-    public almacen delete(almacen a);
-    
+//funcion para mostrar todos los distritos
+	 List<almacen> findAll();
+	 //funcion para mostrar los distritos habilitados
+	 List<almacen> findAllCustom();
+	 //funcion para buscar un distrito por codigo
+	 Optional<almacen> findById(Long id);
+	 //funcion para registrar
+	 almacen add(almacen a);
+	 //funcion para actualizar
+	 almacen update(almacen a);
+	 //funcion para eliminar
+	 almacen delete(almacen a);
 }
