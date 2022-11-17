@@ -34,7 +34,9 @@ public class almacen implements Serializable{
     @Column(name="id_almacen")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long codigo;
+    
     @Column(name="stock")
+    private String stock;
     
     @ManyToOne
     @JoinColumn(name="id_proveedores", nullable =false)
@@ -44,7 +46,7 @@ public class almacen implements Serializable{
     @JoinColumn(name="id_detallle_almacen", nullable =false)
     private detallealmacen detallealmacen;
     
-    private String stock;
+  
     @Column(name="estal")
     private boolean estado; 
     
