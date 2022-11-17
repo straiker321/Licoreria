@@ -37,20 +37,8 @@ public class almacen implements Serializable{
     
     @Column(name="stock")
     private String stock;
-    
-    @ManyToOne
-    @JoinColumn(name="id_proveedores", nullable =false)
-    private proveedores proveedor;
-    
-    @ManyToOne
-    @JoinColumn(name="id_detallle_almacen", nullable =false)
-    private detallealmacen detallealmacen;
-    
-  
+   
     @Column(name="estal")
     private boolean estado;
-    
-    
-    
-    
+       
 }

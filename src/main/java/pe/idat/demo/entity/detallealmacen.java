@@ -28,7 +28,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity(name="detallealmacen")
+@Entity(name="detalle_almacen")
 @Table(name="detalle_almacen")
 public class detallealmacen implements Serializable{
     
@@ -37,11 +37,7 @@ public class detallealmacen implements Serializable{
     @Column(name="iddetallealmacen")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long codigo;
-    
-    @ManyToOne
-    @JoinColumn(name="id_producto", nullable =false)
-    private productos productos;
-    
+   
     @Column(name="fecha_entrada_producto")
     private String fechaentrada;
     
@@ -50,5 +46,9 @@ public class detallealmacen implements Serializable{
     
     @Column(name="estda")
     private boolean estado; 
+    
+    @ManyToOne
+    @JoinColumn(name="id_almacen", nullable =false)
+    private almacen almacen;
    
 }
