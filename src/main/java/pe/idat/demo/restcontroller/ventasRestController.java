@@ -33,8 +33,8 @@ public class ventasRestController {
     }
     
     @GetMapping("/{id}")
-    public Optional<ventas> findById(@PathVariable Long id) {
-        return servicio.findById(id);
+    public Optional<ventas> findById(@PathVariable Long id_ventas) {
+        return servicio.findById(id_ventas);
     }
     
     @PostMapping
@@ -43,16 +43,16 @@ public class ventasRestController {
     }
     
     @PutMapping("/{id}")
-    public ventas update (@PathVariable long id, @RequestBody ventas v) {
-        v.setId_ventas(id);
+    public ventas update (@PathVariable long id_ventas, @RequestBody ventas v) {
+        v.setId_ventas(id_ventas);
         return servicio.update(v);
     }
     
     @DeleteMapping("/{id}")
-    public ventas delete (@PathVariable long id) {
+    public ventas delete (@PathVariable long id_ventas) {
         ventas objventas = new ventas();
         objventas.setEstado(false);
-        return servicio.delete(ventas.builder().id_ventas(id).build());
+        return servicio.delete(ventas.builder().id_ventas(id_ventas).build());
     }
     
 }

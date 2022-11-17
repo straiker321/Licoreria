@@ -51,8 +51,8 @@ public class categoriasRestController {
     }
     
     @PutMapping("/{id}")
-    public categorias update (@PathVariable long id, @RequestBody categorias c) {
-        c.setCodigo(id);
+    public categorias update (@PathVariable long id_categoria, @RequestBody categorias c) {
+        c.setCodigo(id_categoria);
         return servicio.update(c);
     }
     

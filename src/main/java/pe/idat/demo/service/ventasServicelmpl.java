@@ -13,7 +13,7 @@ public class ventasServicelmpl implements ventasService {
 
     
     @Autowired
-        private VentasRepository repositorio;
+    private VentasRepository repositorio;
     
     @Override
     public List<ventas> findAll() {

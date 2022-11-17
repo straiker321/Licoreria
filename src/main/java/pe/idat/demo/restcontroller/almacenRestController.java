@@ -40,8 +40,8 @@ public class almacenRestController {
     }
     
     @GetMapping("/{id}")
-    public Optional<almacen> findById(@PathVariable Long id) {
-        return servicio.findById(id);
+    public Optional<almacen> findById(@PathVariable Long id_almacen) {
+        return servicio.findById(id_almacen);
     }
     
     @PostMapping
