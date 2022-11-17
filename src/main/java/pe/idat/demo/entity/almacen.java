@@ -48,7 +48,7 @@ public class almacen implements Serializable{
     
   
     @Column(name="estal")
-    private boolean estado; 
+    private boolean estado;
     
     
     

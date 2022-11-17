@@ -40,6 +40,9 @@ public class ventas  implements Serializable{
     
     @Column(name = "nombre")
     private String nombre;
+    
+    @Column(name = "estven")
+    private boolean estado;
 
     
 }

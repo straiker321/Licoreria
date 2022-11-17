@@ -30,7 +30,10 @@ public class factura implements Serializable{
     private long id_factura;
     
     @Column(name = "fecha")
-    private Date fecha;
+    private String fecha;
+    
+    @Column(name = "estfec")
+    private boolean estado;
     
     @ManyToOne
     @JoinColumn(name="id_cliente", nullable =false)

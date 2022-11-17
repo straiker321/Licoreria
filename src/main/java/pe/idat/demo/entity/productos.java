@@ -45,7 +45,7 @@ public class productos implements Serializable{
     private categorias categoria;
     
     @ManyToOne
-    @JoinColumn(name="id_proveedor", nullable =false)
+    @JoinColumn(name="id_proveedores", nullable =false)
     private proveedores proveedor;
     
     @Column(name="estpro")

@@ -51,6 +51,7 @@ public class facturaRestController {
     @DeleteMapping("/{id}")
     public factura delete (@PathVariable long id) {
         factura objfactura = new factura();
+        objfactura.setEstado(false);
         return servicio.delete(factura.builder().id_factura(id).build());
     }
     
